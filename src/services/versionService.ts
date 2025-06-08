@@ -15,7 +15,7 @@ class VersionService {
 
 	async checkVersion(): Promise<VersionInfo | null> {
 		try {
-			const response = await fetch('/version.json?' + Date.now());
+			const response = await fetch('/version.json?' + Date.now(), { cache: 'no-cache' });
 			if (!response.ok) {
 				throw new Error('获取版本信息失败');
 			}
