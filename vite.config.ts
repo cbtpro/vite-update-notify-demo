@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, ServerOptions } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import generateVersionPlugin from './plugins/version-generator';
 
@@ -23,6 +23,7 @@ const serverOptions: ServerOptions = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   server: serverOptions,
   plugins: [
     vue(),

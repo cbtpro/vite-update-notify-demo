@@ -17,6 +17,7 @@ export default function generateVersionPlugin(): Plugin[] {
     {
       name: 'generate-version-dev',
       apply: 'serve',
+      // 使用 buildStart 替代 configureServer，保证dev server 启动之前 写入 version.json
       buildStart() {
         const path = resolve(__dirname, '../public/version.json');
         generateVersionFile(path);
