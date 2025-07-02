@@ -26,4 +26,4 @@ dist-ssr
 .bolt
 .history
 
-# public/version.json
+public/version.json
