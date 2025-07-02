@@ -17,7 +17,7 @@ export default function generateVersionPlugin(): Plugin[] {
     {
       name: 'generate-version-dev',
       apply: 'serve',
-      configureServer() {
+      buildStart() {
         const path = resolve(__dirname, '../public/version.json');
         generateVersionFile(path);
       }
